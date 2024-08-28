@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="welcome-container">
+      <div class="welcome-message">
+        <h1>Hello and Welcome!</h1>
+        <p>To the registration page.</p>
+        <button id="get-started-btn">Get Started</button>
+      </div>
+      <div class="form-container" id="form-container">
+        <h2>Register</h2>
+        <form id="registration-form" action="/submit-form" method="post">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required />
+
+          <button type="submit">Submit</button>
+          <p id="error-message" class="error-message"></p>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("get-started-btn")
+        .addEventListener("click", function () {
+          document.querySelector(".welcome-message").style.display = "none";
+          document.getElementById("form-container").style.display = "block";
+        });
+
+      document
+        .getElementById("registration-form")
+        .addEventListener("submit", function (event) {
+          const dob = new Date(document.getElementById("dob").value);
+          const today = new Date();
+          const age = today.getFullYear() - dob.getFullYear();
+          const month = today.getMonth() - dob.getMonth();
+          if (month < 0 || (month === 0 && today.getDate() < dob.getDate())) {
+            age--;
+          }
+
+          if (age < 18) {
+            event.preventDefault(); // Prevent form submission
+            document.getElementById("error-message").textContent =
+              "You must be at least 18 years old to register.";
+            document.getElementById("error-message").style.display = "block";
+          } else {
+            document.getElementById("error-message").style.display = "none"; // Hide error message if valid
+          }
+        });
+    </script>
+  </body>
+</html>

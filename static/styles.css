@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #6a0dad; /* Purple background */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.welcome-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.welcome-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-message h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-family: 'Arial Black', Arial, sans-serif; /* Fancy font */
+}
+
+.welcome-message p {
+    font-size: 25px;
+}
+
+#form-container {
+    background: #fff;
+    color: #000;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: none; /* Hide the form initially */
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid black; /* Add border */
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+input[type="date"] {
+    font-size: 16px; /* Increase font size */
+    height: 40px; /* Increase height */
+}
+
+button {
+    background-color: #4b0082; /* Darker purple */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #6a0dad; /* Lighter purple on hover */
+}
+
+.error-message {
+    color: #ff0000; /* Red color for error messages */
+    font-size: 14px;
+    display: none; /* Hide error message initially */
+}
+
+.thank-you-message {
+    display: none; /* Hide thank-you message initially */
+    background-color: #e6e6fa; /* Light purple background */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #000;
+    text-align: center;
+}
+
+.thank-you-message p {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+}
+
